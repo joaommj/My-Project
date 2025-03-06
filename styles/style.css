@@ -1,0 +1,239 @@
+body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color:white;
+    font: Roboto;
+    font-size: 25px bold;
+    height: 100vh; /* Full viewport height */
+    width: auto;
+    }
+
+
+    /**************INTRO LAYOUT****************/
+    #game-intro {
+        height: 100vh; /* Full viewport height */
+        width: 100%;
+        background-image: url(../images/gameintro.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative; 
+    }
+    
+    /* LOGO - Top Left Corner */
+    .logo-img {
+        position: relative;
+       /* top: 5px;   
+        left: 75px;  */
+        width: 80%; 
+        height: auto;
+        margin:0;
+        width: 200px;
+        border-radius: 10px; 
+        padding: 0px 0px;
+    }
+
+    #farmer-container{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 100px;
+        margin-top: 30px;
+    }
+    
+    #user-name{
+        border: none; 
+        outline: none; 
+        background-color:hwb(139 15% 73% / 0.527); 
+        color:#fff;
+        text-align: center;
+        align-items: center;
+    }
+
+    .chooseFarmer{
+        border-radius: 5px;
+        border: none; /* Removes button border */
+        cursor: pointer; /* Makes it clickable */
+        background-color: transparent; /* Removes background */
+    }
+
+    .chooseFarmer img{
+        height: 350px;
+        width:180px;
+    }
+
+
+    /* BUTTON CONTAINER - Force to Bottom */
+    #btnContainer {
+        position: absolute;
+        bottom: 1%; /* Fixed distance from bottom */
+        left: 50%;
+        transform: translateX(-50%); /* Centering the container */
+        display: flex;
+        flex-direction: row;
+    }
+    
+    /* BUTTON STYLE */
+    #btnContainer button {
+        width: 100%; 
+        margin:5px 10px;
+        padding: 5px 100px;
+        font-size: 15px;
+        background-color: rgba(25, 59, 43, 0.795); /* Slight transparency */
+        color: white;
+        border: none;
+        cursor: pointer;  
+        border-radius: 5px;
+    }
+      
+    #farmer-container button:hover, 
+    #farmer-container button.selected {
+        background-color: hwb(139 15% 73% / 0.527);
+    }
+
+    #game-intro button:hover {
+        background-color: hwb(139 15% 73% / 0.527);
+    }
+
+
+    .addMore {
+        position: relative; /* Needed for tooltip positioning */
+    }
+  
+    .tooltip {
+        visibility: hidden;
+        width: 250px; /* Adjust width */
+        background-color: rgba(0, 0, 0, 0.904); /* Dark semi-transparent background */
+        color: #fff;
+        text-align: justify;
+        padding: 8px;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 150%; /* Position above button */
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: normal; /* Allows text wrapping */
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .addMore:hover .tooltip {
+        visibility: visible;
+        opacity: 0.8;
+    }
+
+  /************************GAME LAYOUT**********************/
+
+  #game-screen {
+    display: none;
+    width: 100vw;  
+    height: 100vh; 
+    position: absolute;
+    background-image: url("../images/field.jpg");
+    background-size: cover;  
+    background-repeat: no-repeat; 
+    background-image: center;
+}
+
+.player {
+    position: absolute;
+    width: 100px !important;  /* Force width */
+    height: 150px !important; /* Force height */
+    z-index: 10;
+    display: block;
+}
+
+#game-screen p{
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 5px;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+#progress {
+    width: 30%;
+   background-color: rgba(255, 255, 255, 0.356);
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px 5px;
+}
+
+#progress-bar {
+    height: 20px;
+  
+    background-color:rgb(25, 59, 43);
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+    /**********************GAME OVER******************/
+    #game-over {
+        display: none;
+        height: 100vh; /* Full viewport height */
+        width: 100%;
+        background-image: url(../images/gameintro.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    #game-over button {
+        width: 100%; 
+        margin:5px;
+        padding: 10px;
+        font-size: 25px;
+        background-color: rgba(25, 59, 43, 0.795); /* Slight transparency */
+        color: white;
+        border: none;
+        cursor: pointer;  
+        border-radius: 5px;
+    }
+    
+    #game-over img{
+        width:20%;
+        height:auto;
+    }
+ 
+    #game-over button:hover {
+        background-color: hwb(139 15% 73% / 0.527);
+    }
+
+    #restartContainer{
+        position: absolute;
+        bottom: 20px; /* Fixed distance from bottom */
+        left: 50%;
+        transform: translateX(-50%); /* Centering the container */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #game-over h1{
+        font-size: 40px;
+        margin-bottom:5px;
+    }
+
+    #game-over h2{
+        width: 80%;
+        padding:30px 0 0 0;
+        margin-top:30px;
+        align-items: center;
+        font-size: 35px;
+        color:rgb(255, 255, 255);
+    }
+
+    #topScore{
+        align-items: center;
+        font-size: 20px;
+        font-weight: bolder;
+        list-style: none;
+        margin:0;
+        padding: 0;
+    }

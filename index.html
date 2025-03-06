@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles/style.css"/>
+    <title>FBI: Field Bug Interceptors</title>
+    <link rel="icon" type="image/png" href="./images/finallogo.png"> 
+</head>
+<body>
+    <main>
+     <!-- #game-intro is initially shown on the game start screen -->
+    <div id="game-intro">
+        <img src="./images/finallogo.png"   alt="FBI: Field Bug Interceptors" class="logo-img" />
+        <section id="farmer-container">
+            <button class="chooseFarmer" id="maleFarmer">
+                <img src="./images/characters/malefarmer.png" alt="Male Farmer"/>
+            </button>
+            <button class="chooseFarmer" id="femaleFarmer">
+                <img src="./images/characters/femalefarmer.png" alt="Female Farmer"/>
+            </button>
+        </section>
+        <section id ="btnContainer">
+            <button>Username:</label>
+                <input type="text" id="user-name"/></button>
+            <button id="start-button">Start Debugging</button>
+            <button class="addMore" >Instructions 
+                <span class="tooltip">Use the arrow keys to move your Bug-Hunter! Pick up the vegetables to win an extra life and destroy the bugs to score points! 
+                To hit them just press the Space keyword with perfect timing, because if they pass by or hit you, it's one life less!</span>
+            </button>
+        </section>
+    </div> 
+
+        <!-- #game-screen is initially hidden using CSS style display: none -->
+    <div id="game-screen"> 
+        <div id="progress">
+            <div id="progress-bar"></div>
+          </div>
+        <p>Score: <span id="score">0</span></p>
+    </div>
+       
+ <!-- #game-over is initially hidden using CSS style display: none -->
+<div id="game-over">
+        <img src="./images/finallogo.png" alt="FBI: Field Bug Interceptors" />
+            <h2>Elite Top 5:</h2>
+            <ol id ="topScore"></ol>
+       <section id ="restartContainer">
+            <h1>Game Over</h1>
+            <button id="restart-button">Restart</button>
+        </section>
+    </div>
+    </main>
+    <script type="text/javascript" src="js/extralife.js"></script>
+    <script type="text/javascript" src="js/obstacle.js"></script>
+    <script type="text/javascript" src="js/player.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

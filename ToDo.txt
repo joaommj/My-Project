@@ -1,0 +1,2 @@
+-join a player name to the top score
+-ask about bonus error
