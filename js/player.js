@@ -13,9 +13,9 @@ class Player{
         this.height = playerHeight;
         this.directionX = 0;
         this.directionY = 0;
-        this.iuu = new Audio('./audio/iuuu.mp3');
+        this.iuu = new Audio('audio/iuuu.mp3');
         this.iuu.volume = 0.7;
-        this.ouch = new Audio('./audio/ouch.mp3');
+        this.ouch = new Audio('audio/ouch.mp3');
         this.ouch.volume = 0.7;
         this.element = document.createElement("img");
         this.element.src = playerImageSrc;

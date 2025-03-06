@@ -27,7 +27,7 @@ class Game {
       this.gameIntervalId = null;
       this.gameLoopFrequency = Math.round(1000 / 60);
       this.counter = 0;
-      this.backgroundMusic = new Audio("./audio/BUG-HUNTER.mp3");
+      this.backgroundMusic = new Audio("audio/BUG-HUNTER.mp3");
       this.backgroundMusic.loop = true;
       this.backgroundMusic.volume = 0.1;
       this.playMusic();
@@ -62,10 +62,7 @@ class Game {
         if (this.counter % 100 === 0){
             this.obstacles.push(new Obstacle(this.gameScreen));
        }
-       /* Spawn bonuses every 500 frames
-        if (this.counter % 500 === 0) {
-            this.bonuses.push(new Bonus(this.gameScreen));
-         }*/
+      
         // Spawn extra life item when score reaches multiples of 10
         if (this.score > 0 && this.score % 10 === 0 && this.lastLifeGivenScore !== this.score) {
             this.extraLives.push(new ExtraLife(this.gameScreen));
@@ -153,7 +150,7 @@ class Game {
         this.backgroundMusic.currentTime = 0; // Reset it to the beginning
         
         // Play game over sound
-        let gameOverSound = new Audio("./audio/gameover.mp3");
+        let gameOverSound = new Audio("audio/gameover.mp3");
         gameOverSound.volume = 0.1;
         gameOverSound.play();
         
